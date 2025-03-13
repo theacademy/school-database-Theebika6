@@ -36,8 +36,8 @@ public class SchoolDaoImpl implements SchoolDao {
         // sorted by last name.
         // YOUR CODE STARTS HERE
 
-        String sql = "SELECT student.fName, student.lName" +
-                "FROM student" +
+        String sql = "SELECT student.fName,student.lName " +
+                "FROM student " +
                 "ORDER BY lName";
 
         // YOUR CODE ENDS HERE
@@ -51,7 +51,10 @@ public class SchoolDaoImpl implements SchoolDao {
         // for all courses in the Computer Science department.
         // YOUR CODE STARTS HERE
 
-         String sql = "SELECT ";
+         String sql = "SELECT course.courseCode, course.courseDesc " +
+                  "FROM course "+
+                 "LEFT JOIN teacher ON teacher.tid = course.tid " +
+                 "WHERE teacher.dept= 'Computer Science";
 
         // YOUR CODE ENDS HERE
         return jdbcTemplate.query(sql, new CourseMapper());
