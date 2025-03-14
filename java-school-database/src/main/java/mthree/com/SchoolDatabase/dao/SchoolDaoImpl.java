@@ -128,7 +128,7 @@ public class SchoolDaoImpl implements SchoolDao {
 
         String sql = "UPDATE course " +
         "SET courseDesc = 'Advanced Python with Flask' " +
-        "WHERE courseCODE = 'CS305' ";
+        "WHERE courseCode = 'CS305' ";
 
         // YOUR CODE ENDS HERE
         jdbcTemplate.update(sql);
